@@ -10,58 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: rgba(12, 167, 128, 0.795);
-        }
-        
-        h1 {
-            /*font-family: 'Caveat', cursive;*/
-            animation-name: colorchanger;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-        }
-        
-        @keyframes colorchanger {
-            from {
-                color: rgb(3, 150, 106);
-            }
-            to {
-                color: black;
-            }
-        }
-        
-        h5 {
-            color: yellowgreen;
-        }
-        
-        .foot {
-            text-align: center;
-            color: whitesmoke;
-        }
-        
-        a {
-            color: whitesmoke;
-        }
-        
-        .heart {
-            color: red;
-        }
-        
-        .s {
-            font-family: 'Courgette', cursive;
-        }
-        
-        .ss {
-            font-family: 'Courgette', cursive;
-        }
-        
-        .sss {
-            padding: 7px 3px;
-            margin: 5px 10px;
-            font-family: 'Baloo Bhaina 2', cursive;
-        }
-    </style>
+   <link rel="stylesheet" href="assets/style.css">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -118,93 +72,12 @@
     <footer class="foot">
         Made with <svg class="bi bi-heart-fill" id="heart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-      </svg> by <a href="https://www.linkedin.com/in/sakshi-choudhary-14aa2a1a6">Sakshi Choudhary</a>
+      </svg> by <a href="https://www.linkedin.com/in/sakshichoudhary23">Sakshi Choudhary</a>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        console.log("Welcome to notes app. This is app.js");
-        showNotes();
-
-        // If user adds a note, add it to the localStorage
-        let addBtn = document.getElementById("addBtn");
-        addBtn.addEventListener("click", function(e) {
-            let addTxt = document.getElementById("addTxt");
-            let notes = localStorage.getItem("notes");
-            if (notes == null) {
-                notesObj = [];
-            } else {
-                notesObj = JSON.parse(notes);
-            }
-            notesObj.push(addTxt.value);
-            localStorage.setItem("notes", JSON.stringify(notesObj));
-            addTxt.value = "";
-            //   console.log(notesObj);
-            showNotes();
-        });
-
-        // Function to show elements from localStorage
-        function showNotes() {
-            let notes = localStorage.getItem("notes");
-            if (notes == null) {
-                notesObj = [];
-            } else {
-                notesObj = JSON.parse(notes);
-            }
-            let html = "";
-            notesObj.forEach(function(element, index) {
-                html += `
-            <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Note ${index + 1}</h5>
-                        <p class="card-text"> ${element}</p>
-                        <button id="${index}"onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button>
-                    </div>
-                </div>`;
-            });
-            let notesElm = document.getElementById("notes");
-            if (notesObj.length != 0) {
-                notesElm.innerHTML = html;
-            } else {
-                notesElm.innerHTML = `Nothing to show! Use "Write a Note" section above to add notes.`;
-            }
-        }
-
-        // Function to delete a note
-        function deleteNote(index) {
-
-
-            let notes = localStorage.getItem("notes");
-            if (notes == null) {
-                notesObj = [];
-            } else {
-                notesObj = JSON.parse(notes);
-            }
-
-            notesObj.splice(index, 1);
-            localStorage.setItem("notes", JSON.stringify(notesObj));
-            showNotes();
-        }
-
-
-        let search = document.getElementById('searchTxt');
-        search.addEventListener("input", function() {
-
-            let inputVal = search.value.toLowerCase();
-
-            let noteCards = document.getElementsByClassName('noteCard');
-            Array.from(noteCards).forEach(function(element) {
-                let cardTxt = element.getElementsByTagName("p")[0].innerText;
-                if (cardTxt.includes(inputVal)) {
-                    element.style.display = "block";
-                } else {
-                    element.style.display = "none";
-                }
-
-            })
-        })
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
