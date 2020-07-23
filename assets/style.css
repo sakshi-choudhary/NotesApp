@@ -1,0 +1,50 @@
+body {
+    background-color: rgba(12, 167, 128, 0.795);
+}
+
+h1 {
+    /*font-family: 'Caveat', cursive;*/
+    animation-name: colorchanger;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorchanger {
+    from {
+        color: rgb(3, 150, 106);
+    }
+    to {
+        color: black;
+    }
+}
+
+h5 {
+    color: yellowgreen;
+}
+
+.foot {
+    text-align: center;
+    color: whitesmoke;
+}
+
+a {
+    color: whitesmoke;
+}
+
+.heart {
+    color: red;
+}
+
+.s {
+    font-family: 'Courgette', cursive;
+}
+
+.ss {
+    font-family: 'Courgette', cursive;
+}
+
+.sss {
+    padding: 7px 3px;
+    margin: 5px 10px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
