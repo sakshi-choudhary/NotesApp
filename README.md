@@ -1,3 +1,3 @@
 A note taking app made with vanilla javascript. No backend used.
 
-live at : http://sakshichoudhary.me/SashNotes/
+live at : http://sakshichoudhary.me/NotesApp/
