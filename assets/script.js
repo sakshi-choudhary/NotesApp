@@ -78,3 +78,8 @@ search.addEventListener("input", function() {
 
     })
 })
+
+// Function to clear a note before submitting
+function eraseText() {
+    document.getElementById("addTxt").value = "";
+}
