@@ -21,7 +21,7 @@ addBtn.addEventListener("click", function(e) {
 // Function to show elements from localStorage
 function showNotes() {
     let notes = localStorage.getItem("notes");
-    if (notes == null) {
+    if (!notes) {
         notesObj = [];
     } else {
         notesObj = JSON.parse(notes);
