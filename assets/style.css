@@ -49,3 +49,11 @@ a {
     margin: 5px 10px;
     font-family: 'Baloo Bhaina 2', cursive;
 }
+
+.btn-left{
+    float: left;
+}
+
+.btn-right{
+    float: right;
+}
